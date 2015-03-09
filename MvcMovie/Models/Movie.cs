@@ -13,6 +13,7 @@ namespace MvcMovie.Models
         [Required, StringLength(60, MinimumLength=3)]
         public string Title { get; set; }
         [Display(Name = "ReleaseDate"),DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
         [Required]
         public string Genre { get; set; }
@@ -22,6 +23,11 @@ namespace MvcMovie.Models
         public string Rating { get; set; }
         public bool Razzie { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
+
+        public Movie()
+        {
+            Ratings = new List<Rating>();
+        }
 
         public double ratingAverage() 
         {

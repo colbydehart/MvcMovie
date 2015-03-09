@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201503091606454_FixedorBroke.Designer.cs">
       <DependentUpon>201503091606454_FixedorBroke.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503091857094_date-formatting.cs" />
+    <Compile Include="Migrations\201503091857094_date-formatting.Designer.cs">
+      <DependentUpon>201503091857094_date-formatting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -661,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503091606454_FixedorBroke.resx">
       <DependentUpon>201503091606454_FixedorBroke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091857094_date-formatting.resx">
+      <DependentUpon>201503091857094_date-formatting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
