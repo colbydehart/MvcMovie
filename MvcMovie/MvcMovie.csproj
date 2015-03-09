@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201503091525140_AddedRatings1.Designer.cs">
       <DependentUpon>201503091525140_AddedRatings1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503091606454_FixedorBroke.cs" />
+    <Compile Include="Migrations\201503091606454_FixedorBroke.Designer.cs">
+      <DependentUpon>201503091606454_FixedorBroke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -654,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503091525140_AddedRatings1.resx">
       <DependentUpon>201503091525140_AddedRatings1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091606454_FixedorBroke.resx">
+      <DependentUpon>201503091606454_FixedorBroke.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

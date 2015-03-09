@@ -2,6 +2,7 @@ namespace MvcMovie.Migrations
 {
     using MvcMovie.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -23,7 +24,8 @@ namespace MvcMovie.Migrations
                     Genre = "Romantic Comedy",
                     Rating = "PG",
                     Price = 7.99M,
-                    Razzie = true
+                    Razzie = true,
+                    Ratings = new List<Models.Rating>()
                 },
 
                 new Movie
@@ -33,7 +35,9 @@ namespace MvcMovie.Migrations
                     Genre = "Comedy",
                     Rating = "PG-13",
                     Price = 8.99M,
-                    Razzie = true
+                    Razzie = true,
+                    Ratings = new List<Models.Rating>()
+
                 },
 
                 new Movie
@@ -43,17 +47,21 @@ namespace MvcMovie.Migrations
                     Genre = "Comedy",
                     Rating = "PG-13",
                     Price = 8.99M,
-                    Razzie = false
+                    Razzie = false,
+                    Ratings = new List<Models.Rating>()
+
                 },
 
-                new Movie 
-                { 
+                new Movie
+                {
                     Title = "Rio Bravo",
                     ReleaseDate = DateTime.Parse("1959-4-15"),
                     Genre = "Western",
                     Rating = "PG",
                     Price = 3.99M,
-                    Razzie = true
+                    Razzie = true,
+                    Ratings = new List<Models.Rating>()
+
                 }
             );
         }

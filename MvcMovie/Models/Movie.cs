@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Linq;
 
 namespace MvcMovie.Models
 {
@@ -21,6 +22,12 @@ namespace MvcMovie.Models
         public string Rating { get; set; }
         public bool Razzie { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
+
+        public double ratingAverage() 
+        {
+            return Ratings.Average(x => x.OneToFive);
+
+        }
     }
 
     public class MovieDBContext : DbContext 

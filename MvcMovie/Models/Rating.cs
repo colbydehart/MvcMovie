@@ -15,7 +15,12 @@ namespace MvcMovie.Models
         [Range(1, 5), Required]
         public int OneToFive { get; set; }
         public virtual Movie Movie { get; set; }
+
+        
     }
+
+   
+
 
     
 }

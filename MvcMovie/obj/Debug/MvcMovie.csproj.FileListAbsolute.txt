@@ -61,3 +61,4 @@ c:\Users\jspencersharpe\documents\visual studio 2013\Projects\MvcMovie\MvcMovie\
 c:\Users\jspencersharpe\documents\visual studio 2013\Projects\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.Razzie.resources
 c:\Users\jspencersharpe\documents\visual studio 2013\Projects\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.AddedRatings.resources
 c:\Users\jspencersharpe\documents\visual studio 2013\Projects\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.AddedRatings1.resources
+c:\Users\jspencersharpe\documents\visual studio 2013\Projects\MvcMovie\MvcMovie\obj\Debug\MvcMovie.Migrations.FixedorBroke.resources

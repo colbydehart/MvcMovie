@@ -14,6 +14,12 @@ namespace MvcMovie.Controllers
     {
         private MovieDBContext db = new MovieDBContext();
 
+        public class MovRate
+        {
+            public Movie Movie { get; set; }
+            public Rating Rating { get; set; }
+        }
+
         // GET: Movies
         public ActionResult Index(string movieGenre, string searchString)
         {
