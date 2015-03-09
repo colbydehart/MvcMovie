@@ -76,11 +76,30 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating,Razzie")] Movie movie)
+        public ActionResult Create(MovRate vm)
         {
+            Movie movie = new Movie
+            {
+                Title = vm.Movie.Title,
+                Genre = vm.Movie.Genre,
+                Price = vm.Movie.Price,
+                Rating = vm.Movie.Rating,
+                Razzie = vm.Movie.Razzie,
+                ReleaseDate = vm.Movie.ReleaseDate,
+                Ratings = new List<Rating>()
+            };
+            Rating rating = new Rating
+            {
+                OneToFive = vm.Rating.OneToFive,
+                Movie = movie,
+                userName = User.Identity.Name
+            };
+            movie.Ratings.Add(rating);
+
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);
+                db.Ratings.Add(rating);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -100,7 +119,23 @@ namespace MvcMovie.Controllers
             {
                 return HttpNotFound();
             }
-            return View(movie);
+            var vm = new MovRate { Movie= movie };
+            //Get the appropriate rating if it exists
+            if (db.Ratings.Any(r => r.userName == User.Identity.Name))
+            {
+                var rating = (from r in db.Ratings
+                              where r.userName == User.Identity.Name
+                              select r).First<Rating>();
+                vm.Rating = rating;
+            }
+            else
+            {
+                vm.Rating = new Rating { userName = User.Identity.Name, MovieId = movie.ID, OneToFive= 3 };
+                vm.Movie.Ratings.Add(vm.Rating);
+                db.Ratings.Add(vm.Rating);
+                db.SaveChanges();
+            }
+            return View(vm);
         }
 
         // POST: Movies/Edit/5
@@ -108,8 +143,11 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating,Razzie")] Movie movie)
+        public ActionResult Edit(MovRate vm)
         {
+            Movie movie = vm.Movie;
+            Rating rating = vm.Rating;
+
             if (ModelState.IsValid)
             {
                 db.Entry(movie).State = EntityState.Modified;
