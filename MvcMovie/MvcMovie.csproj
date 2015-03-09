@@ -186,11 +186,20 @@
     <Compile Include="Migrations\201503051701018_Razzie.Designer.cs">
       <DependentUpon>201503051701018_Razzie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503091507496_AddedRatings.cs" />
+    <Compile Include="Migrations\201503091507496_AddedRatings.Designer.cs">
+      <DependentUpon>201503091507496_AddedRatings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503091525140_AddedRatings1.cs" />
+    <Compile Include="Migrations\201503091525140_AddedRatings1.Designer.cs">
+      <DependentUpon>201503091525140_AddedRatings1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -639,6 +648,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503051701018_Razzie.resx">
       <DependentUpon>201503051701018_Razzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091507496_AddedRatings.resx">
+      <DependentUpon>201503091507496_AddedRatings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091525140_AddedRatings1.resx">
+      <DependentUpon>201503091525140_AddedRatings1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

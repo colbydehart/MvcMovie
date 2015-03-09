@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
@@ -18,11 +19,13 @@ namespace MvcMovie.Models
         public decimal Price { get; set; }
         [Required,StringLength(5)]
         public string Rating { get; set; }
-         public bool Razzie { get; set; }
+        public bool Razzie { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
     }
 
     public class MovieDBContext : DbContext 
     {
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
     }
 }
